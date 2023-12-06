@@ -1,14 +1,16 @@
 #!/bin/bash
 
-# Generates a bash completion file for the `ivpn` CLI.
-# 
-# Usage:
-# Install the ivpn CLI package first: https://www.ivpn.net/apps-linux/
+# Bash completion generator for ivpn CLI
+# (generates a bash completion script for the `ivpn` CLI)
+# https://github.com/jordan-ivpn/bash-completion-generator-ivpn-cli/
 #
-# $ bash-completion-generator-ivpn-cli.sh > ivpn.bash
-# $ source ivpn.bash
-# $ sudo mv ivpn.bash /usr/share/bash-completion/completions/ivpn
-# $ sudo chown root:root /usr/share/bash-completion/completions/ivpn
+# Usage:
+#   Install the ivpn CLI package first: https://www.ivpn.net/apps-linux/
+#
+#   $ bash-completion-generator-ivpn-cli.sh > ivpn.bash
+#   $ source ivpn.bash
+#   $ sudo mv ivpn.bash /usr/share/bash-completion/completions/ivpn
+#   $ sudo chown root:root /usr/share/bash-completion/completions/ivpn
 #
 # Info: 
 #   1)  The recommended directory is `completionsdir`, which you can get with `pkg-config --variable=completionsdir bash-completion`
@@ -18,8 +20,8 @@
 # exit on error
 set -e
 
-# By default, the ivpn command is `ivpn`. 
-# Also you can specify custom path to IVPN CLI binary by in the first argument to this script.
+# By default, the source command is `ivpn`. 
+# Also you can specify custom path to IVPN CLI binary in the first argument to this script (e.g. `bash-completion-generator-ivpn-cli.sh /usr/local/bin/ivpn`)
 cli="ivpn"
 if [ ! -z "$1" ]
 then
